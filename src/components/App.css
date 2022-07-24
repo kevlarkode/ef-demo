@@ -299,13 +299,13 @@ body {
 }
 
 /* tooltip */
-.tooltip {
+.tooltip-target {
   position: relative;
   display: inline-block;
   cursor: pointer;
 }
 
-.tooltip .tooltip-content {
+.tooltip-target .tooltip-content {
   visibility: hidden;
   width: 120px;
   background-color: #3b434b;
@@ -324,7 +324,7 @@ body {
   z-index: 99 !important;
 }
 
-.tooltip .tooltip-content::after {
+.tooltip-target .tooltip-content::after {
   content: "";
   position: absolute;
   bottom: 100%;
@@ -336,7 +336,7 @@ body {
   transform: rotate(180deg);
 }
 
-.tooltip:hover .tooltip-content {
+.tooltip-target:hover .tooltip-content {
   visibility: visible;
   opacity: 1;
   display: flex;
@@ -434,13 +434,13 @@ body {
   #bell {
     background-color: transparent;
   }
-  .tooltip .tooltip-content {
+  .tooltip-target .tooltip-content {
     margin-left: -90px;
   }
-  .tooltip .tooltip-content::after {
+  .tooltip-target .tooltip-content::after {
     margin-left: -33px;
   }
-  .tooltip {
+  .tooltip-target {
     transform: scale(0.75);
   }
 }

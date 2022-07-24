@@ -1,10 +1,10 @@
 import React from 'react'
+import Tooltip from './Tooltip';
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { PieChart } from 'react-minimal-pie-chart';
-import { Line } from 'rc-progress';
 
 
 const UserStatus = (props) => {
@@ -55,7 +55,7 @@ const UserStatus = (props) => {
 
     return (
         <div className="details-row-div">
-            
+
             <div className="row-wrapper">
 
                 <div className="resp-div-1">
@@ -147,7 +147,7 @@ const UserStatus = (props) => {
                             width: 60,
                             height: 60
                         }}>
-                            <div class="tooltip">
+                            <div class="tooltip-target">
                                 <PieChart
                                     labelStyle={{
                                         fontSize: "5px",
@@ -164,35 +164,7 @@ const UserStatus = (props) => {
                                         { title: 'Fat', value: fatConsumed / fatTarget * 100, color: '#f45c84' }
                                     ]}
                                 />
-                                <span class="tooltip-content">
-                                    <div className="tooltip-bar-1">
-                                        <div className='tooltip-info'>
-                                            <p>PROTIENS</p>
-                                            <p className='item-weight'>70 g</p>
-                                        </div>
-                                        <Line className='progressbar-line' percent={proteinConsumed / proteinTarget * 100} strokeWidth={6} strokeColor="#eec30f"
-                                            trailWidth={6}
-                                            trailColor="#101317" />
-                                    </div>
-                                    <div className="tooltip-bar-2">
-                                        <div className='tooltip-info'>
-                                            <p>FATS</p>
-                                            <p className='item-weight'>70 g</p>
-                                        </div>
-                                        <Line className='progressbar-line' percent={fatConsumed / fatTarget * 100} strokeWidth={6} strokeColor="#f45c84"
-                                            trailWidth={6}
-                                            trailColor="#101317" />
-                                    </div>
-                                    <div className="tooltip-bar-3">
-                                        <div className='tooltip-info'>
-                                            <p>CARBS</p>
-                                            <p className='item-weight'>70 g</p>
-                                        </div>
-                                        <Line className='progressbar-line' percent={carbConsumed / carbTarget * 100} strokeWidth={6} strokeColor="#03c6fb"
-                                            trailWidth={6}
-                                            trailColor="#101317" />
-                                    </div>
-                                </span>
+                                <Tooltip user={props.user}/>
                             </div>
                             <p className='sub-text'>{calorieIntake}</p>
                             <p className='sub-text'>calories</p>
@@ -222,7 +194,7 @@ const UserStatus = (props) => {
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     )
