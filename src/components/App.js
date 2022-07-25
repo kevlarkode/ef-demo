@@ -13,7 +13,7 @@ function App() {
             "stepsWalked": 3500,
             "stepsTarget": 5000,
             "performedDate": "15 Jul",
-            "scheduledDate": "25 Aug",
+            "scheduledDate": "25 Jul",
             "calorieIntake": 2000,
             "calorieTarget": 3500,
             "proteinConsumed": 1000,
